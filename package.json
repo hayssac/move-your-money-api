@@ -1,0 +1,27 @@
+{
+  "name": "move-your-money-api",
+  "version": "1.0.0",
+  "description": "API for the app Move Your Money",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js --exec babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "js"
+  ],
+  "author": "Hayssa Costa",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.7"
+  }
+}
