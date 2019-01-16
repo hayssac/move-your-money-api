@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-MongoClient.connect("mongodb://localhost:27017/", {
+MongoClient.connect("mongodb://localhost:27017/move-your-money-db", {
   useNewUrlParser: true
 })
 

@@ -1,17 +1,25 @@
-import Mock from './userModel';
+import { User } from '../src/userModel';
 
-exports.index = (req, res) => {
-  Mock.get(function (err, users) {
+let userController = {}
+
+userController.create = (req, res) => {
+  let newUser = new User(req.body);
+
+  newUser.save((err, user) => {
     if (err) {
-      res.json({
-        status: "error",
-        message: err,
-      });
+      res.send(err);
     }
-    res.json({
-      status: "success",
-      message: "Contacts retrieved successfully",
-      data: users
-    });
+    res.json(user);
   });
-};
+}
+
+userController.index = (req, res) => {
+  User.find((err, users) => {
+    if (err) {
+      res.send('err');
+    }
+    res.json(users);
+  });
+}
+
+export default userController

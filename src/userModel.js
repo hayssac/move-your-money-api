@@ -1,21 +1,14 @@
 
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
-const mockSchema = mongoose.Schema({
-  id: {
-    type: Number,
-    required: true
-  },
-  first_name: {
-    type: String,
-    required: true
-  },
-  last_name:  {
-    type: String,
-    required: true
-  },
-});
+const Schema = mongoose.Schema
 
-const Mock = mongoose.model('Mock', mockSchema);
+const userSchema = new Schema({
+  first_name: { type: String, required: true },
+  last_name: { type: String, required: true },
+  email: { type: String, required: true },
+  phone: { type: Number },
+  created_date: { type: Date, default: Date.now }
+})
 
-export default Mock
+export const User = mongoose.model('User', userSchema, 'users');
