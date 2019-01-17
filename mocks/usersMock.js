@@ -2,7 +2,7 @@
   {
     first_name: 'Hayssa',
     last_name: 'Costa',
-    email: 'hayssa.hscosta@gmail.com',
+    email: 'hayssa.co@email.com',
     phone: '772992929111'
   },
   {
