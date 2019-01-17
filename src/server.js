@@ -1,7 +1,7 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import routes from './routes';
-import MongoClient from 'mongodb';
+import mongoose from 'mongoose';
 import cors from 'cors';
 
 
@@ -16,9 +16,14 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-MongoClient.connect("mongodb://localhost:27017/move-your-money-db", {
+mongoose.Promise = global.Promise;
+mongoose.connect("mongodb://localhost:27017/move-your-money-db", {
   useNewUrlParser: true
 })
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 
 app.use('/api', routes)
 
