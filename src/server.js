@@ -2,10 +2,13 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import routes from './routes';
 import MongoClient from 'mongodb';
+import cors from 'cors';
 
 
 const app = express()
 const port = process.env.PORT || 5656;
+
+app.use(cors());
 
 app.use(bodyParser.urlencoded({
   extended: true
